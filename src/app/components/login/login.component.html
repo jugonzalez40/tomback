@@ -1,20 +1,36 @@
-<p>login works!</p>
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-           Add
+<video playsinline  autoplay muted loop id="myVideo">
+    <source src="../../../assets/ntv.mp4" type="video/mp4">
+</video>
+<div class="overaly"></div>
+<div nz-row nzJustify="center">
+    <div nz-col nzSpan="20">
+        <div class="login-container">
+            <div class="image-container">
+                <img src="../../../assets/money.png" alt="" srcset="">
+            </div>
+            <div class="title-container">
+                <h1 class="title">TOMBACK</h1>
+            </div>
+            <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your username!">
+                        <nz-input-group nzPrefixIcon="user">
+                            <input type="text" nz-input formControlName="userName" placeholder="Username" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Password!">
+                        <nz-input-group nzPrefixIcon="lock">
+                            <input type="password" nz-input formControlName="password" placeholder="Password" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <button nz-button [nzSize]="'large'" class="login-form-button login-form-margin" [nzType]="'primary'">Go
+                    with the flow</button>
+            </form>
+            
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-sm">
-            One of three columns
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm">
-            One of three columns
-        </div>
     </div>
 </div>

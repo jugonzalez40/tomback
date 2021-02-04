@@ -1,0 +1,17 @@
+.menu-button {
+    font-family: 'Carter One', cursive;
+      font-size: 50px;
+      border: 0.25rem solid black;
+    text-align: center;
+
+    cursor: pointer;
+
+    
+    &.expense {
+        background-color: #0288d1;
+    }
+
+    &.record {
+        background-color: #f57c00;
+    }
+}
