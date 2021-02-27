@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {AuthService} from '../../auth/auth.service';
 import {LoginService} from './login.service';
 
 @Component({
@@ -20,21 +21,25 @@ export class LoginComponent implements OnInit {
 
     if (this.validateForm.invalid) return;
 
-    const go = await this.loginService.login(this.validateForm.getRawValue())
-    go && this.route.navigate(['/main']);
-
+    await this.loginService.login(
+      this.validateForm.get('email').value,
+      this.validateForm.get('password').value);
 
   }
 
-  constructor(private fb: FormBuilder, private loginService: LoginService, private route: Router) {
+  constructor(private fb: FormBuilder, private loginService: LoginService, private authService: AuthService, private route: Router) {
   }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
-      userName: [null, [Validators.required]],
+      email: [null, [Validators.required]],
       password: [null, [Validators.required]],
       remember: [true]
     });
+
+    if(this.authService.isAuthenticated()) {
+      this.route.navigate(['main'])
+    }
 
 
   }

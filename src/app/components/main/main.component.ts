@@ -6,7 +6,91 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
+  list = [{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },{
+    name: 'Juan'
+  },];
   constructor() { }
 
   ngOnInit(): void {

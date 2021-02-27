@@ -1,17 +1,40 @@
 .menu-button {
     font-family: 'Carter One', cursive;
-      font-size: 50px;
-      border: 0.25rem solid black;
+    font-size: 50px;
+    border-bottom: 0.25rem solid black;
     text-align: center;
-
     cursor: pointer;
-
-    
     &.expense {
-        background-color: #0288d1;
+        background: #faebd7;
     }
 
     &.record {
-        background-color: #f57c00;
+        background: #000;
+        color: #faebd7;
+    }
+}
+.history-container {
+    height: calc(100% - 83px);
+    overflow-y: scroll;
+
+    .record-container {
+        padding: 0.75rem;
+        background: #000;
+        border-bottom: 5px solid #000;
+        &, .text-value {
+            color: white;
+        }
+
+        .icon-container {
+            font-size: 3rem;
+        }
+
+        &:nth-child(2n) {
+            background: #faebd7;
+            &, .text-value {
+                color: black;
+            }
+            
+          }
     }
 }

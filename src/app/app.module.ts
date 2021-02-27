@@ -20,7 +20,22 @@ import {VendorNgZorroAntdModule} from './components/vendor.module';
 import {LoginService} from './components/login/login.service';
 import {AuthService} from './auth/auth.service';
 import {AuthGuardService} from './auth/auth.guard';
-import {JwtHelperService, JwtModule, JWT_OPTIONS} from '@auth0/angular-jwt';
+// 1. Import the libs you need
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+
+const config = {
+  apiKey: "AIzaSyAF5A5uPwZ0QbpbX_2BgGG7Feb7XSBqBE0",
+  authDomain: "tomeback-f13a0.firebaseapp.com",
+  projectId: "tomeback-f13a0",
+  storageBucket: "tomeback-f13a0.appspot.com",
+  messagingSenderId: "696061875752",
+  appId: "1:696061875752:web:09a1cde09bc50f9fc7871d",
+  measurementId: "G-H7J6S7Q2TL"
+};
+
 registerLocaleData(es);
 
 @NgModule({
@@ -38,12 +53,15 @@ registerLocaleData(es);
     HttpClientModule,
     BrowserAnimationsModule,
     VendorNgZorroAntdModule,
-    JwtModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(config),
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule // storage
   ],
   exports: [RouterModule],
 
-  providers: [LoginService, AuthService, AuthGuardService, {provide: JWT_OPTIONS, useValue: JWT_OPTIONS}, JwtHelperService, {provide: NZ_I18N, useValue: es_ES}],
+  providers: [LoginService, AuthService, AuthGuardService, {provide: NZ_I18N, useValue: es_ES}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
